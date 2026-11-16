@@ -2,7 +2,7 @@ var C='tapepad-v1';
 var Z='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
 self.addEventListener('install',function(e){
  e.waitUntil(caches.open(C).then(function(c){
-  return c.addAll(['./','tapepad.html','tapepad-icon.png']).then(function(){
+  return c.addAll(['./','index.html','tapepad-icon.png']).then(function(){
    return fetch(new Request(Z,{mode:'no-cors'})).then(function(r){return c.put(Z,r)}).catch(function(){})})
  }).then(function(){return self.skipWaiting()}))});
 self.addEventListener('activate',function(e){
