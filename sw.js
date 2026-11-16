@@ -12,4 +12,4 @@ self.addEventListener('fetch',function(e){
  e.respondWith(fetch(e.request).then(function(r){
   if(r&&(r.ok||r.type==='opaque')){var cp=r.clone();caches.open(C).then(function(c){c.put(e.request,cp)})}
   return r}).catch(function(){
-  return caches.match(e.request).then(function(m){return m||caches.match('tapepad.html')})}))});
+  return caches.match(e.request).then(function(m){return m||caches.match('index.html')})}))});
